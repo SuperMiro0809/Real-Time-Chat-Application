@@ -1,0 +1,31 @@
+.chat {
+    border: 2px solid gray;
+    margin-top: 5% !important;
+    padding: 20px;
+    background-color: #e3e2de;
+    border-radius: 10px;
+    text-align: center !important;
+}
+
+.send,
+button[disabled]:hover {
+    color: black;
+    font-weight: 500;
+    background-color: #ccb0e8;
+    border-top-left-radius: .0rem;
+    border-bottom-left-radius: .0rem;
+}
+
+.error {
+    color: #ff5959;
+    font-weight: 500;
+    font-size: 17px;
+}
+
+.send:hover {
+    background-color:#f0e0ff;
+}
+
+.message-form {
+   margin-top: 15px;
+}

@@ -21,4 +21,8 @@ export class ChatComponent implements OnInit {
     this.socket = io(SOCKET_ENDPOINT);
   }
 
+  submitFormHandler(data) {
+    
+  }
+
 }

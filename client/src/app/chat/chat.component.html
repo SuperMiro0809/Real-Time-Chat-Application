@@ -1,1 +1,13 @@
-<p>chat works!</p>
+<div class="chat">
+
+    <form #f="ngForm" class="message-form" (ngSubmit)="submitFormHandler(f.value)">
+        <p class="error" *ngIf="message.touched && message.errors?.required">
+            Please enter a message
+        </p>
+
+        <div class="input-group mb-3">
+            <input #message="ngModel" name="message" type="text" class="form-control" aria-describedby="inputGroup-sizing-default" placeholder="Message" required ngModel>
+            <button [disabled]="f.invalid" class="btn btn-outline-secondary send" type="submit" id="button-addon2">Button</button>
+        </div>
+    </form>
+</div>

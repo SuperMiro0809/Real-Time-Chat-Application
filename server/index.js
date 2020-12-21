@@ -21,6 +21,11 @@ app.get('/', (req, res) => {
 
 io.on('connection', (socket) => {
     console.log('user connected');
+
+    socket.on('message', (msg) => {
+        console.log(msg);
+        socket.broadcast('message-broadcast', msg);
+    })
 })
 
 
