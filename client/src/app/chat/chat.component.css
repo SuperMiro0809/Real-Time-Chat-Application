@@ -7,6 +7,18 @@
     text-align: center !important;
 }
 
+.inbox-container {
+    border: 2px solid gray;
+    margin-top: 5% !important;
+    padding: 20px;
+    background-color: #e3e2de;
+    border-radius: 10px;
+}
+
+#inbox {
+    list-style-type: none;
+}
+
 .send,
 button[disabled]:hover {
     color: black;
@@ -28,4 +40,17 @@ button[disabled]:hover {
 
 .message-form {
    margin-top: 15px;
+}
+
+:host ::ng-deep .received-message {
+    font-size: 17px;
+    padding:  15px 30px;
+    margin: 10px;
+}
+
+:host ::ng-deep .send-message{
+    font-size: 17px;
+    padding:  15px 30px;
+    margin: 10px;
+    text-align: right;
 }

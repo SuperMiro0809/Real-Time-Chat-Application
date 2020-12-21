@@ -19,10 +19,24 @@ export class ChatComponent implements OnInit {
 
   setupSocketConnection() {
     this.socket = io(SOCKET_ENDPOINT);
+    this.socket.on('message-broadcast', (data: string) => {
+      if(data) {
+        const element = document.createElement('li');
+        element.textContent = data;
+        element.classList.add('received-message');
+        document.getElementById('inbox').appendChild(element);
+      }
+    });
   }
 
-  submitFormHandler(data) {
-    
+  submitFormHandler(data, messageInput) {
+    const message = data.message;
+    this.socket.emit('message', message);
+    const element = document.createElement('li');
+    element.textContent = message;
+    element.className = 'send-message';
+    document.getElementById('inbox').appendChild(element);
+    messageInput.value = '';
   }
 
 }

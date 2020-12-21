@@ -1,13 +1,18 @@
 <div class="chat">
 
-    <form #f="ngForm" class="message-form" (ngSubmit)="submitFormHandler(f.value)">
+    <form #f="ngForm" class="message-form" (ngSubmit)="submitFormHandler(f.value, msgInput)">
         <p class="error" *ngIf="message.touched && message.errors?.required">
             Please enter a message
         </p>
 
         <div class="input-group mb-3">
-            <input #message="ngModel" name="message" type="text" class="form-control" aria-describedby="inputGroup-sizing-default" placeholder="Message" required ngModel>
+            <input #message="ngModel" #msgInput name="message" type="text" class="form-control" aria-describedby="inputGroup-sizing-default" placeholder="Message" required ngModel>
             <button [disabled]="f.invalid" class="btn btn-outline-secondary send" type="submit" id="button-addon2">Button</button>
         </div>
     </form>
+</div>
+
+<div class="inbox-container">
+    <ul id="inbox">
+    </ul>
 </div>
